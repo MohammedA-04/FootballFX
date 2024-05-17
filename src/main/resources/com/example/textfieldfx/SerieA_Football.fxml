@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Undo Comment for run <?import com.example.textfieldfx.ImageTableCell?> -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="footballHome_AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1246.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.textfieldfx.SerieA_Controller">
+
+
+    <!-- Sidebar Anchor Pane -->
+    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="87.0" style="-fx-background-color: lightgray;">
+
+        <VBox layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="670.0" prefWidth="79.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="11.0">
+
+            <!-- Profile Image -->
+            <ImageView fitHeight="55.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets bottom="20.0" />
+                </VBox.margin>
+                <Image url="@../../../images/avatar.png" />
+            </ImageView>
+
+            <!-- Premier League Image -->
+            <ImageView fx:id="PL_ImageView" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets bottom="20.0" left="5.0" right="5.0" />
+                </VBox.margin>
+                <Image url="@../../../images/PL.png" />
+            </ImageView>
+
+            <!-- La Liga Image -->
+            <ImageView fx:id="Laliga_ImageView" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets bottom="20.0" left="5.0" right="5.0" />
+                </VBox.margin>
+                <Image url="@../../../images/Laliga.png" />
+            </ImageView>
+
+            <!-- Ligue 1 Image -->
+            <ImageView fx:id="Ligue1_ImageView" fitHeight="52.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets bottom="20.0" left="5.0" right="5.0" />
+                </VBox.margin>
+                <Image url="@../../../images/Ligue1.png" />
+            </ImageView>
+
+            <!-- Bundesliga Image -->
+            <ImageView fx:id="Bundesliga_ImageView" fitHeight="52.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets bottom="20.0" left="5.0" right="5.0" />
+                </VBox.margin>
+                <Image url="@../../../images/Bundesliga.png" />
+            </ImageView>
+
+            <!-- Serie A -->
+            <ImageView fx:id="SerieA_ImageView" fitHeight="145.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../../../images/SerieA.png" />
+            </ImageView>
+
+        </VBox>
+    </AnchorPane>
+
+    <!-- Standings Table -->
+
+    <TableView fx:id="SerieATable_TableView" layoutX="100.0" layoutY="76.0" prefHeight="591.0" prefWidth="620.0" style="-fx-text-fill: black">
+        <columns>
+            <TableColumn fx:id="LogoColumn" prefWidth="49.599998474121094" text="Logo" />
+            <TableColumn fx:id="rankColumn" prefWidth="41.600006103515625" text="Rank" />
+            <TableColumn fx:id="teamColumn" prefWidth="134.3999786376953" text="Team" />
+            <TableColumn fx:id="winColumn" prefWidth="33" text="W" />
+            <TableColumn fx:id="drawColumn" prefWidth="33" text="D" />
+            <TableColumn fx:id="lossColumn" prefWidth="33" text="L" />
+            <TableColumn fx:id="ptsColumn" prefWidth="40" text="Pts" />
+            <TableColumn fx:id="formColumn" minWidth="0.0" prefWidth="76.80001831054688" text="Form" />
+            <TableColumn fx:id="noteColumn" prefWidth="260.800048828125" text="Note" />
+            <TableColumn fx:id="statusColumn" prefWidth="93.0" text="Status" />
+        </columns>
+    </TableView>
+
+
+    <!-- Page Label -->
+    <Label fx:id="PL_Label" layoutX="100.0" layoutY="14.0" prefHeight="46.0" prefWidth="223.0" text="Football | Serie A Page">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+
+    <!-- Back Button <Image> -->
+    <ImageView fx:id="backToFootballHome_ImageView" fitHeight="52.0" fitWidth="59.0" layoutX="1116.0" layoutY="616.0" onMouseClicked="#SerieAToBundesliga" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../images/Back-Icon.png" />
+    </ImageView>
+
+
+    <!-- Does Nothing RN -->
+    <!-- Forward Button <Image> -->
+    <ImageView fx:id="toLaliga_ImageView" fitHeight="67.0" fitWidth="65.0" layoutX="1175.0" layoutY="612.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../images/Forward-Icon.png" />
+    </ImageView>
+
+    <!-- Season Label -->
+    <Label fx:id="season_Label" layoutX="739.0" layoutY="76.0" text="Season:">
+        <font>
+            <Font name="Segoe UI" size="18.0" />
+        </font>
+    </Label>
+
+    <!-- Choice Box for Season -->
+    <ChoiceBox fx:id="season_choice" layoutX="739.0" layoutY="112.0" prefWidth="150.0" />
+
+    <!-- Button Calls API -->
+    <Button fx:id="getSerieA_Button" layoutX="901.0" layoutY="112.0" mnemonicParsing="false" text="GET" />
+    <Label fx:id="season_Label1" layoutX="986.0" layoutY="76.0" text="Top Scorers:">
+        <font>
+            <Font name="Segoe UI" size="18.0" />
+        </font>
+    </Label>
+    <ImageView fx:id="topScorer_ImageView" fitHeight="204.0" fitWidth="200.0" layoutX="984.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
+    <Button fx:id="topScorer_Button" layoutX="1091.0" layoutY="75.0" mnemonicParsing="false" text="GET Top Scorer" />
+    <Label fx:id="topScorerAssists_Label" layoutX="989.0" layoutY="384.0" prefHeight="23.0" prefWidth="61.0" text="Assists:">
+        <font>
+            <Font name="Segoe UI" size="18.0" />
+        </font>
+    </Label>
+    <Label fx:id="topScorerGoals_Label" layoutX="989.0" layoutY="349.0" text="Goals:">
+        <font>
+            <Font name="Segoe UI" size="18.0" />
+        </font>
+    </Label>
+    <Label fx:id="topScorerGA_Label" layoutX="989.0" layoutY="420.0" text="G/A:">
+        <font>
+            <Font name="Segoe UI" size="18.0" />
+        </font>
+    </Label>
+    <Label fx:id="topScorerPlayer_Label" layoutX="985.0" layoutY="112.0" text="Player: ">
+        <font>
+            <Font name="Segoe UI" size="18.0" />
+        </font>
+    </Label>
+</AnchorPane>

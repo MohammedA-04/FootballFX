@@ -1,0 +1,13 @@
+.choice-box .menu {
+    -fx-pref-height: 28px; /* Set to the desired height of each item in the dropdown */
+}
+
+.comboBox {
+    -fx-max-width: 210px;
+    -fx-max-height: 28px; /* Set to the preferred height or any other desired value */
+    /* Add any other styles you want to apply */
+}
+
+.root {
+    -fx-background-color: #03fcca;
+}
